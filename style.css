@@ -1,0 +1,130 @@
+/* Animasi latar belakang lembut */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Georgia', serif;
+  background: linear-gradient(135deg, #ffeaa7, #fd79a8, #a29bfe);
+  background-size: 600% 600%;
+  animation: gradientBG 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  color: #2d3436;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  max-width: 650px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(4px);
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 25px;
+  color: #e17055;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+#message {
+  font-size: 1.35em;
+  line-height: 1.7;
+  margin: 25px auto;
+  min-height: 180px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  padding: 0 10px;
+}
+
+#message.show {
+  opacity: 1;
+}
+
+button {
+  background: #e84393;
+  color: white;
+  border: none;
+  padding: 14px 36px;
+  font-size: 1.15em;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+}
+
+button:hover {
+  background: #d32f7b;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.heart {
+  display: none;
+  font-size: 2.2em;
+  color: #e74c3c;
+  margin-top: 25px;
+  animation: heartbeat 1.4s infinite;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.2); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.18); }
+  70% { transform: scale(1); }
+}
+/* Galeri Kenangan */
+.gallery {
+  display: none;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px dashed #e17055;
+}
+
+.gallery.show {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 12px;
+  max-width: 500px;
+  margin: 20px auto 0;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}
+
+/* Placeholder jika foto tidak ada */
+.gallery .missing {
+  background: #f8f9fa;
+  border: 1px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-size: 0.75em;
+}
